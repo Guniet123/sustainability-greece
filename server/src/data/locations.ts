@@ -6,13 +6,15 @@ export const locations: Location[] = [
         category: "solar",
         latitude: 40.6401,
         longitude: 22.9444,
-        description: "Government-installed solar power plants."
+        description: "Government-installed solar power plants.",
+        city: "Heraklion"
     },
     {
         id: "2",
         category: "windmill",
         latitude: 35.3387,
         longitude: 25.1442,
-        description: "Government-installed windmills."
+        description: "Government-installed windmills.",
+        city: "Nafplio"
     }
 ];
