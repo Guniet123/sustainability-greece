@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import type { Location } from "./types/location";
+import LocationsList from "./components/LocationsList";
+
+type Category = "all" | "windmill" | "solar" | "recycling" | "leiki";
 
 function App() {
   const [locations, setLocations] = useState<Location[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [category, setCategory] = useState<Category>("all");
 
   useEffect(() => {
     fetch("http://localhost:3001/api/locations")
@@ -18,6 +22,11 @@ function App() {
       });
   }, []);
 
+  const filteredLocations =
+    category === "all"
+    ? locations
+    : locations.filter(locations => locations.category === category);
+
   if (loading) {
     return <p>Loading locations...</p>;
   }
@@ -25,15 +34,15 @@ function App() {
   return (
     <div>
       <h1>Sustainability Locations</h1>
-      <ul>
-        {locations.map(location => (
-          <li key={location.id}>
-            <h3>{location.category}</h3>
-            <p>{location.city}</p>
-            <p>{location.description}</p>
-          </li>
-        ))}
-      </ul>
+      <div>
+        <button onClick={() => setCategory("all")}>All</button>
+        <button onClick={() => setCategory("windmill")}>WindMills</button>
+        <button onClick={() => setCategory("solar")}>Solar</button>
+        <button onClick={() => setCategory("recycling")}>Recycling</button>
+        <button onClick={() => setCategory("leiki")}>Leiki - Farmer's Markets</button>
+      </div>
+
+      <LocationsList locations={filteredLocations} />
     </div>
   );
 }
