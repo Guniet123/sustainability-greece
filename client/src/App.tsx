@@ -35,7 +35,7 @@ if (path === "/trips") {
   return <Home />;
 } */
 
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+  import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Gilman from "./pages/Gilman";
 import Trips from "./pages/Trips";
@@ -49,7 +49,6 @@ export default function App() {
     libraries,
   });
 
-  // Handle loading / error states for Google Maps
   if (loadError) {
     return (
       <div style={{ color: "red", padding: "20px" }}>
@@ -78,5 +77,4 @@ export default function App() {
     </Router>
   );
 }
-
 
