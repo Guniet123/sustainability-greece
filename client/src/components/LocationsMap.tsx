@@ -81,21 +81,23 @@ export default function LocationsMap({locations}: Props) {
     }, [locations]);
 
     return (
-        <div style={{width: "100%", height: "100%"}}>
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_ID}>
+        
+        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+            <div style={{width: "100%", height: "100%"}}>
         <GoogleMap mapContainerStyle={containerStyle}
             center={defaultCenter} zoom={7}
             onLoad={(map) => {
                 mapRef.current = map;
             }}
             options={{
+                mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
                 mapTypeId: "hybrid",
                 disableDefaultUI: true,
                 zoomControl: true,
             }}>
             
         </GoogleMap>
-        </LoadScript>
         </div>
+        </LoadScript>
     );
 }
