@@ -17,7 +17,7 @@ const photos = [
   { src: "../assets/trips/photo13.jpg", location: "Meteora" },
   { src: "../assets/trips/photo14.jpg", location: "Thermopylae" },
   { src: "../assets/trips/photo15.jpg", location: "Delphi" },
-  { src: "../assets/trips/photo16.jpg", location: "Naflpio" },
+  { src: "../assets/trips/photo16.jpg", location: "Nafplio" },
   { src: "../assets/trips/photo17.jpg", location: "Mykonos" },
   { src: "../assets/trips/photo18.jpg", location: "Arachova" },
   { src: "../assets/trips/photo19.jpg", location: "Hydra" },
