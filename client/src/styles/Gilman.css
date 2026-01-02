@@ -8,7 +8,8 @@
     width: 60%;
     height: 30vh;
     margin-top: 5vh;
-    margin-left: 40vh;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
     border-radius: 5vh;
 }
