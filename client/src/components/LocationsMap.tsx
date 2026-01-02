@@ -1,4 +1,4 @@
-import { GoogleMap} from "@react-google-maps/api";
+import { GoogleMap, LoadScript} from "@react-google-maps/api";
 import type { Location } from "../types/location";
 import { useEffect, useRef } from "react";
 
@@ -82,19 +82,20 @@ export default function LocationsMap({locations}: Props) {
 
     return (
         <div style={{width: "100%", height: "100%"}}>
+        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_ID}>
         <GoogleMap mapContainerStyle={containerStyle}
             center={defaultCenter} zoom={7}
             onLoad={(map) => {
                 mapRef.current = map;
             }}
             options={{
-                mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
                 mapTypeId: "hybrid",
                 disableDefaultUI: true,
                 zoomControl: true,
             }}>
             
         </GoogleMap>
+        </LoadScript>
         </div>
     );
 }
