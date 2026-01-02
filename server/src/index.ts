@@ -3,9 +3,11 @@ import cors from "cors";
 import { locations } from "./data/locations";
  
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 app.use(express.json());
 
 // Check the health status of the server
