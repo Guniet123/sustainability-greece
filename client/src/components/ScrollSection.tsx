@@ -86,7 +86,7 @@ export default function ScrollSection() {
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
     useEffect(() => {
-    fetch("http://localhost:3001/api/locations")
+    fetch(`${import.meta.env.VITE_API_URL}/api/locations`)
       .then((res) => res.json())
       .then((data: Location[]) => setAllLocations(data))
       .catch((err) => console.error("Failed to fetch locations:", err));
