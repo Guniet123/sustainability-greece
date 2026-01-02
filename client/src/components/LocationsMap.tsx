@@ -88,7 +88,7 @@ export default function LocationsMap({locations}: Props) {
                 mapRef.current = map;
             }}
             options={{
-                mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
+                
                 mapTypeId: "hybrid",
                 disableDefaultUI: true,
                 zoomControl: true,
