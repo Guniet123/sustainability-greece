@@ -1,50 +1,37 @@
-import { useEffect, useState } from "react";
-import type { Location } from "./types/location";
-import LocationsList from "./components/LocationsList";
+import Home from "./pages/Home";
+import Gilman from "./pages/Gilman";
+import Trips from "./pages/Trips";
+import { useJsApiLoader } from "@react-google-maps/api";
 
-type Category = "all" | "windmill" | "solar" | "recycling" | "leiki";
+const libraries: ("marker")[] = ["marker"];
 
-function App() {
-  const [locations, setLocations] = useState<Location[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [category, setCategory] = useState<Category>("all");
+export default function App() {
+const path = window.location.pathname;
 
-  useEffect(() => {
-    fetch("http://localhost:3001/api/locations")
-      .then(res => res.json())
-      .then((data: Location[]) => {
-        setLocations(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed to fetch locations:", err);
-        setLoading(false);
-      });
-  }, []);
-
-  const filteredLocations =
-    category === "all"
-    ? locations
-    : locations.filter(locations => locations.category === category);
-
-  if (loading) {
-    return <p>Loading locations...</p>;
-  }
-
-  return (
-    <div>
-      <h1>Sustainability Locations</h1>
-      <div>
-        <button onClick={() => setCategory("all")}>All</button>
-        <button onClick={() => setCategory("windmill")}>WindMills</button>
-        <button onClick={() => setCategory("solar")}>Solar</button>
-        <button onClick={() => setCategory("recycling")}>Recycling</button>
-        <button onClick={() => setCategory("leiki")}>Leiki - Farmer's Markets</button>
-      </div>
-
-      <LocationsList locations={filteredLocations} />
-    </div>
-  );
+if (path === "/gilman") {
+  return <Gilman />;
 }
 
-export default App;
+if (path === "/trips") {
+  return <Trips />
+}
+
+  const { isLoaded, loadError } = useJsApiLoader({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    libraries,
+  });
+  if (loadError) {
+    return (
+      <div style={{ color: "red", padding: "20px"}}>
+        Failed to load Google Maps
+      </div>
+    );
+  }
+
+  if (!isLoaded) {
+    return <div style={{color: "white", padding: "20px"}}>Loading map...</div>
+  }
+
+  return <Home />;
+}
+

@@ -1,0 +1,51 @@
+.gilamn-page {
+    min-height: 100vh;
+    background: #f9f9f9;
+    color: #111;
+}
+
+.gilman-hero {
+    width: 60%;
+    height: 30vh;
+    margin-top: 5vh;
+    margin-left: 40vh;
+    overflow: hidden;
+    border-radius: 5vh;
+}
+
+.gilman-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gilman-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+
+.gilman-content h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.gilman-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    font-weight: 500;
+    color: #1a5fd0;
+    text-decoration: none;
+    margin-left: 26vh;
+}
+.gilman-link:hover {
+    text-decoration: underline;
+}
+
+.gilman-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: center;
+}

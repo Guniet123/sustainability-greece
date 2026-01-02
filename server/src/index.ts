@@ -8,10 +8,12 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
+// Check the health status of the server
 app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+// Gets the list of locations
 app.get("/api/locations", (_req, res) => {
     res.json(locations);
 });

@@ -1,0 +1,82 @@
+.trips-page {
+  background: #0b0b0b;
+  color: white;
+}
+
+.trips-hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../assets/trips/hero.jpg") center/cover no-repeat;
+}
+
+.trips-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.trips-hero h1 {
+  position: relative;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.trips-map {
+  padding: 60px 0;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: center;
+}
+
+.trips-map img {
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.trips-gallery {
+  columns: 3;
+  column-gap: 20px;
+  padding: 60px 40px;
+}
+
+.trip-photo {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.trip-photo img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+.photo-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 900px) {
+  .trips-gallery {
+    columns: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .trips-gallery {
+    columns: 1;
+    padding: 40px 20px;
+  }
+}
