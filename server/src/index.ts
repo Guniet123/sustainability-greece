@@ -15,6 +15,10 @@ app.get("/api/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+app.get("/", (_req, res) => {
+    res.send("Sustainability in Greece API is running");
+});
+
 // Gets the list of locations
 app.get("/api/locations", (_req, res) => {
     res.json(locations);
