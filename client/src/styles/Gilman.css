@@ -38,9 +38,8 @@
     font-weight: 500;
     color: #1a5fd0;
     text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    margin-left: 26vh;
+    margin-right: 26vh;
 }
 .gilman-link:hover {
     text-decoration: underline;
