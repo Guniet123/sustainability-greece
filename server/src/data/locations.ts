@@ -7,8 +7,8 @@ export const locations: Location[] = [
     {
         id: "1",
         category: "solar",
-        latitude: 38.81186,
-        longitude: 22.54364,
+        latitude: 38.815522,
+        longitude: 22.563350,
         description: "Multiple solar farms of substantial size North of highway A1",
         city: "Thermopylae"
     },
@@ -103,8 +103,8 @@ export const locations: Location[] = [
     {
         id: "13",
         category: "solar",
-        latitude: 37.64592,
-        longitude: 22.60916,
+        latitude: 37.638520,
+        longitude: 22.626709,
         description: "Mountaintop solar farms near Argos",
         city: "Argos"
     },
