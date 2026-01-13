@@ -82,24 +82,15 @@ const sections = [
 
 export default function ScrollSection() {
     const [activeIndex, setActiveIndex] = useState(0);
-    //const [allLocations, setAllLocations] = useState<Location[]>([]);
-    //const allLocations = locations; //
     const [allLocations] = useState<Location[]>(locations);
     const [mapVisible, setMapVisible] = useState(false);
 
 
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-
-    /* useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/locations`)
-      .then((res) => res.json())
-      .then((data: Location[]) => setAllLocations(data))
-      .catch((err) => console.error("Failed to fetch locations:", err));
-  }, []); */
     
     useEffect(() => {
         const handleScroll = () => {
-        let currentIndex = 0; //
+        let currentIndex = 0; 
 
         sectionRefs.current.forEach((section, index) => {
             if (!section) return;

@@ -91,7 +91,7 @@ export default function LocationsMap({locations, onMapReady}: Props) {
             center={defaultCenter} zoom={7}
             onLoad={(map) => {
                 mapRef.current = map;
-                setMapReady(true); //
+                setMapReady(true); 
                 onMapReady?.();
             }}
             options={{
