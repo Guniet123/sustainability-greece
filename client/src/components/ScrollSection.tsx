@@ -85,6 +85,7 @@ export default function ScrollSection() {
     //const [allLocations, setAllLocations] = useState<Location[]>([]);
     //const allLocations = locations; //
     const [allLocations] = useState<Location[]>(locations);
+    const [mapVisible, setMapVisible] = useState(false);
 
 
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
@@ -152,7 +153,8 @@ export default function ScrollSection() {
                 </div>
 
                 <div className="map-overlay active">
-                    <LocationsMap locations={filteredLocations} />
+                    <LocationsMap locations={filteredLocations} 
+                        onMapReady={() => setMapVisible(true)}/>
                 </div>
             </div>
         </>

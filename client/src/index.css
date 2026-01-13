@@ -4,9 +4,11 @@
   box-sizing: border-box;
 }
 
+
 html, body, #root {
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #08344b;
 }
 
 .hero {
@@ -14,6 +16,7 @@ html, body, #root {
   background-image: url("/assets/statue_1.jpg");
   background-size: cover;
   background-position: center;
+  background-color: #0b1f2a;
   position: relative;
   z-index: 1;
 }

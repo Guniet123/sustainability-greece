@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 // Prop passed from App containing the list of locations
 type Props = {
     locations: Location[];
+    onMapReady?: () => void;
 }
 
 const markerIcons: Record<string, string> = {
@@ -48,7 +49,7 @@ function createMarkerContent(loc: Location) {
     return container;
 }
 
-export default function LocationsMap({locations}: Props) {
+export default function LocationsMap({locations, onMapReady}: Props) {
     const mapRef = useRef<google.maps.Map | null>(null);
     const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
     const [mapReady, setMapReady] = useState(false); //
@@ -91,6 +92,7 @@ export default function LocationsMap({locations}: Props) {
             onLoad={(map) => {
                 mapRef.current = map;
                 setMapReady(true); //
+                onMapReady?.();
             }}
             options={{
                 mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
