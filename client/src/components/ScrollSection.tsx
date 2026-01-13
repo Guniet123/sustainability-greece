@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import LocationsMap from "../components/LocationsMap";
 import type { Location } from "../types/location";
-import { locations } from "../locations";
 
 const sections = [
     {
@@ -92,8 +91,6 @@ export default function ScrollSection() {
       .then((data: Location[]) => setAllLocations(data))
       .catch((err) => console.error("Failed to fetch locations:", err));
   }, []);
-
-    setAllLocations(locations);
     
     useEffect(() => {
         const handleScroll = () => {
