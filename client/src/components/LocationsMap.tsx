@@ -1,6 +1,6 @@
 import { GoogleMap } from "@react-google-maps/api";
 import type { Location } from "../types/location";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Prop passed from App containing the list of locations
 type Props = {
@@ -51,9 +51,11 @@ function createMarkerContent(loc: Location) {
 export default function LocationsMap({locations}: Props) {
     const mapRef = useRef<google.maps.Map | null>(null);
     const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
+    const [mapReady, setMapReady] = useState(false); //
+
 
     useEffect(() => {
-        if (!mapRef.current || !window.google) {
+        if (!mapReady ||!mapRef.current || !window.google) {
             return;
         }
 
@@ -78,7 +80,7 @@ export default function LocationsMap({locations}: Props) {
 
         mapRef.current.fitBounds(bounds);
 
-    }, [locations]);
+    }, [locations, mapReady]);
 
     return (
         
@@ -88,6 +90,7 @@ export default function LocationsMap({locations}: Props) {
             center={defaultCenter} zoom={7}
             onLoad={(map) => {
                 mapRef.current = map;
+                setMapReady(true); //
             }}
             options={{
                 mapId: import.meta.env.VITE_GOOGLE_MAP_ID,

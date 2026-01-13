@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import LocationsMap from "../components/LocationsMap";
 import type { Location } from "../types/location";
+import { locations } from "../locations";
 
 const sections = [
     {
@@ -81,16 +82,19 @@ const sections = [
 
 export default function ScrollSection() {
     const [activeIndex, setActiveIndex] = useState(0);
-    const [allLocations, setAllLocations] = useState<Location[]>([]);
+    //const [allLocations, setAllLocations] = useState<Location[]>([]);
+    //const allLocations = locations; //
+    const [allLocations] = useState<Location[]>(locations);
+
 
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
-    useEffect(() => {
+    /* useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/locations`)
       .then((res) => res.json())
       .then((data: Location[]) => setAllLocations(data))
       .catch((err) => console.error("Failed to fetch locations:", err));
-  }, []);
+  }, []); */
     
     useEffect(() => {
         const handleScroll = () => {
