@@ -89,7 +89,7 @@ export default function ScrollSection() {
     useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/locations`)
       .then((res) => res.json())
-      //.then((data: Location[]) => setAllLocations(data))
+      .then((data: Location[]) => setAllLocations(data))
       .catch((err) => console.error("Failed to fetch locations:", err));
   }, []);
 
