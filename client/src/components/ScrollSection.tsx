@@ -152,7 +152,7 @@ export default function ScrollSection() {
                     </section> ))}
                 </div>
 
-                <div className="map-overlay active">
+                <div className={`map-overlay ${mapVisible ? "active" : ""}`}>
                     <LocationsMap locations={filteredLocations} 
                         onMapReady={() => setMapVisible(true)}/>
                 </div>
