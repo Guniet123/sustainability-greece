@@ -8,11 +8,11 @@ An interactive, map-driven web experience documenting sustainability initiatives
 
 ---
 
-## 🌍 Project Overview
+## Project Overview
 
 This project explores sustainability efforts in Greece through:
-- A **scroll-driven narrative experience**
-- **Interactive Google Maps** with custom markers
+- A scroll-driven narrative experience
+- Interactive Google Maps with custom markers
 - Category-based filtering of sustainability locations
 - Visual storytelling through photos, gradients, and transitions
 
@@ -20,7 +20,7 @@ The site is designed to be informative, engaging, and accessible, while demonstr
 
 ---
 
-## ✨ Features
+## Features
 
 - **Scroll-based storytelling** with dynamic background transitions  
 - **Interactive map visualization** using Google Maps API  
@@ -31,7 +31,7 @@ The site is designed to be informative, engaging, and accessible, while demonstr
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React** (with TypeScript)
@@ -49,21 +49,12 @@ The site is designed to be informative, engaging, and accessible, while demonstr
 
 ---
 
-## 🗺 Pages
+## Pages
 
 - **Home** — Scroll-based sustainability narrative with interactive map  
 - **Gilman** — Overview of the Gilman Scholarship and its impact  
 - **Our Trips** — Visual travel documentation with location context  
 
 ---
-
-## 🧠 Key Engineering Concepts
-
-- Component-driven architecture
-- Scroll event handling & intersection observers
-- Environment variable management
-- Client-side routing fallback (Vercel rewrites)
-- UI layering (z-index, overlays, fixed positioning)
-- Map marker rendering & interactivity
 
 ---
